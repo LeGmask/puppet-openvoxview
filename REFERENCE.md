@@ -52,6 +52,15 @@ The following parameters are available in the `openvoxview` class:
 * [`puppetdb_tls_cert_path`](#-openvoxview--puppetdb_tls_cert_path)
 * [`download_url`](#-openvoxview--download_url)
 * [`install_method`](#-openvoxview--install_method)
+* [`puppetca_host`](#-openvoxview--puppetca_host)
+* [`puppetca_port`](#-openvoxview--puppetca_port)
+* [`puppetca_tls`](#-openvoxview--puppetca_tls)
+* [`puppetca_tls_ignore`](#-openvoxview--puppetca_tls_ignore)
+* [`puppetca_tls_ca`](#-openvoxview--puppetca_tls_ca)
+* [`puppetca_tls_key`](#-openvoxview--puppetca_tls_key)
+* [`puppetca_tls_crt`](#-openvoxview--puppetca_tls_crt)
+* [`puppetca_readonly`](#-openvoxview--puppetca_readonly)
+* [`puppetca_deactivate_nodes`](#-openvoxview--puppetca_deactivate_nodes)
 * [`install_package_name`](#-openvoxview--install_package_name)
 
 ##### <a name="-openvoxview--version"></a>`version`
@@ -261,6 +270,78 @@ Data type: `Enum['archive', 'package']`
 Installation method, either 'archive' or 'package'
 
 Default value: `'archive'`
+
+##### <a name="-openvoxview--puppetca_host"></a>`puppetca_host`
+
+Data type: `Optional[String]`
+
+Address of Puppet CA server (optional)
+
+Default value: `undef`
+
+##### <a name="-openvoxview--puppetca_port"></a>`puppetca_port`
+
+Data type: `Integer[1024, 65535]`
+
+Port of Puppet CA server
+
+Default value: `8140`
+
+##### <a name="-openvoxview--puppetca_tls"></a>`puppetca_tls`
+
+Data type: `Boolean`
+
+Use TLS for Puppet CA communications
+
+Default value: `true`
+
+##### <a name="-openvoxview--puppetca_tls_ignore"></a>`puppetca_tls_ignore`
+
+Data type: `Boolean`
+
+Ignore validation of TLS certificate
+
+Default value: `false`
+
+##### <a name="-openvoxview--puppetca_tls_ca"></a>`puppetca_tls_ca`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+Path to CA cert file for Puppet CA
+
+Default value: `undef`
+
+##### <a name="-openvoxview--puppetca_tls_key"></a>`puppetca_tls_key`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+Path to client key file for Puppet CA
+
+Default value: `undef`
+
+##### <a name="-openvoxview--puppetca_tls_crt"></a>`puppetca_tls_crt`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+Path to client cert file for Puppet CA
+
+Default value: `undef`
+
+##### <a name="-openvoxview--puppetca_readonly"></a>`puppetca_readonly`
+
+Data type: `Boolean`
+
+Whether to allow signing / revoking / cleaning certs
+
+Default value: `true`
+
+##### <a name="-openvoxview--puppetca_deactivate_nodes"></a>`puppetca_deactivate_nodes`
+
+Data type: `Boolean`
+
+Also deactivate node in PuppetDB with revoke / clean
+
+Default value: `false`
 
 ##### <a name="-openvoxview--install_package_name"></a>`install_package_name`
 
